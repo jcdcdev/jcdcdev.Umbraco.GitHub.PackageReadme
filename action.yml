@@ -59,7 +59,7 @@ runs:
           } -ErrorAction Stop
           if ($response -eq $null) {
             Write-Host "No readme found for $baseUrl"
-            exit 1
+            exit 0
           }
 
           $newContent = $response
@@ -71,7 +71,7 @@ runs:
           } else {
               Write-Host $_
           }
-          exit 1
+          exit 0
         }
 
         # check if the new content is different from the current content
@@ -121,7 +121,7 @@ runs:
           } -ErrorAction Stop
           if ($response -eq $null) {
             Write-Host "No readme found for $baseUrl"
-            exit 1
+            exit 0
           }
 
           $newContent = $response
@@ -133,7 +133,7 @@ runs:
           } else {
               Write-Host $_
           }
-          exit 1
+          exit 0
         }
 
         # check if the new content is different from the current content
