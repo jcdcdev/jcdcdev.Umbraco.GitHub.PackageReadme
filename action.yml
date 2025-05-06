@@ -51,7 +51,7 @@ runs:
 
         $newContent = ""
 
-        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=github"
+        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=github?branch=${{ inputs.branch }}"
         try{
           # include api key header
           $response = Invoke-RestMethod -Uri $baseUrl -Method Get -Headers @{
