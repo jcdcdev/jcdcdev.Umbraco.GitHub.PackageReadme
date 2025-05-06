@@ -94,7 +94,7 @@ runs:
         
         # commit the changes
         git add $env:README_FILEPATH
-        git commit -m "doc: Update $env:README_FILEPATH"
+        git commit -m "doc: Update README"
         git push
     - name: Update nuget readme
       id: update-buget-readme
@@ -156,5 +156,5 @@ runs:
         
         # commit the changes
         git add $env:NUGET_README_FILEPATH
-        git commit -m "doc: Update $env:NUGET_README_FILEPATH"
+        git commit -m "doc: Update NuGet README"
         git push
