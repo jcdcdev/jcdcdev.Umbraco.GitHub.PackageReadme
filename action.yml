@@ -113,7 +113,7 @@ runs:
 
         $newContent = ""
 
-        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=nuget"
+        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=nuget&branch=${{ inputs.branch }}"
         try{
           # include api key header
           $response = Invoke-RestMethod -Uri $baseUrl -Method Get -Headers @{
