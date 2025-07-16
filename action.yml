@@ -51,7 +51,7 @@ runs:
 
         $newContent = ""
 
-        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=github&branch=${{ inputs.branch }}"
+        $baseUrl="https://cms.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=github&branch=${{ inputs.branch }}"
         try{
           # include api key header
           $response = Invoke-RestMethod -Uri $baseUrl -Method Get -Headers @{
@@ -113,7 +113,7 @@ runs:
 
         $newContent = ""
 
-        $baseUrl="https://content.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=nuget&branch=${{ inputs.branch }}"
+        $baseUrl="https://cms.jcdc.dev/api/marketplace/packages/readme/$($env:PROJECT_NAME)?type=nuget&branch=${{ inputs.branch }}"
         try{
           # include api key header
           $response = Invoke-RestMethod -Uri $baseUrl -Method Get -Headers @{
@@ -123,7 +123,7 @@ runs:
             Write-Host "No readme found for $baseUrl"
             exit 0
           }
-
+          
           $newContent = $response
         }
         catch {
